@@ -1,4 +1,5 @@
 package main
+import kotlin.random.Random
 
 fun myFunction(fname: String, age: Int)
 {
@@ -34,7 +35,7 @@ class Cars(var brand: String, var model: String, var year:Int)
 fun main() {
     val myNum = 1.997
     val mynumb = 1.886
-    val calc : Double = mynumb + myNum
+    val calc: Double = mynumb + myNum
     println(calc)
 
     val x: Int = 5
@@ -51,15 +52,15 @@ fun main() {
     println("Is fish tasty? " + isFishTasty)
 
     val xy = 10
-    val yx  = 9
+    val yx = 9
     println(xy == yx)
 
 
     val numberOne = 28
     val numberTwo = 28
-    if (numberOne > numberTwo){
+    if (numberOne > numberTwo) {
         println("$numberOne is greater than $numberTwo")
-    } else if (numberOne < numberTwo){
+    } else if (numberOne < numberTwo) {
         println("$numberOne is not greater than $numberTwo")
     } else {
         println("The numbers are equal")
@@ -67,12 +68,12 @@ fun main() {
 
 
     val time = 20
-    val greeting = if(time < 10)"Good morning" else "Good evening"
+    val greeting = if (time < 10) "Good morning" else "Good evening"
     println(greeting)
 
 
     val day = 7
-    val result = when (day){
+    val result = when (day) {
         1 -> "Monday"
         2 -> "Tuesday"
         3 -> "Wednesday"
@@ -86,7 +87,7 @@ fun main() {
 
 
     var i = 0
-    while (i < 5){
+    while (i < 5) {
         println(i)
         i++
     }
@@ -96,12 +97,11 @@ fun main() {
     do {
         println(b)
         b++
-    }
-        while(b > 5)
+    } while (b > 5)
 
 
     var k = 0
-    while (k < 10){
+    while (k < 10) {
         println(k)
         k++
         if (k == 4) {
@@ -121,13 +121,13 @@ fun main() {
     }
 
 
-    val cars = arrayOf("Volvo" , "BMW" , "Ford" , "Mazda")
+    val cars = arrayOf("Volvo", "BMW", "Ford", "Mazda")
     cars[0] = "Skoda"
     println(cars[0])
     println(cars.size)
 
 
-    val myCars = arrayOf("Skoda" , "Dacia" , "Mazda")
+    val myCars = arrayOf("Skoda", "Dacia", "Mazda")
     if ("Lada" in myCars) {
         println("You had this car")
     } else {
@@ -135,7 +135,7 @@ fun main() {
     }
 
 
-    val newCars = arrayOf("Volvo" , "BMW" , "Ford" , "Mazda")
+    val newCars = arrayOf("Volvo", "BMW", "Ford", "Mazda")
     for (x in newCars) {
         println(x)
     }
@@ -146,7 +146,7 @@ fun main() {
         println(x)
     }
 
-    for(chars in 'a'..'x') {
+    for (chars in 'a'..'x') {
         println(chars)
     }
 
@@ -204,6 +204,25 @@ fun main() {
     println(c2.brand)
     println(c2.model)
     println(c2.year)
+
+
+    fun generateRandomString(length: Int): String {
+
+        val chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+        val randomString = StringBuilder()
+
+        for (i in 0 until length) {
+            val randomIndex = Random.nextInt(chars.length)
+            randomString.append(chars[randomIndex])
+        }
+
+        return randomString.toString()
+
+
+    }
+
+    val randomWord = generateRandomString(255)
+    println(randomWord)
 
 
 }
